@@ -1,6 +1,7 @@
 package com.neighbors.budgetingApp.controller;
 
 
+import com.neighbors.budgetingApp.domain.Dish;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,9 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class BudgetController {
 
     @GetMapping("/")
-    public String hello() {
-        return "hello, world!";
+    public Dish top() {
+        Dish dish = new Dish();
+        dish.setDishName("味噌汁");
+        dish.setPrice("200");
+        return dish;
     }
-
 
 }
